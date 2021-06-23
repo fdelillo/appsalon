@@ -1,0 +1,34 @@
+.formulario {
+    width: 100%;
+}
+.campo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    /* utilizo flex para dar tamaño a los elementos del div que son el label y el imput. 
+        Es es que debo dividir ese 100% del espacio disponible entre ambos selectores.
+        Como al label le asigno un factor de crecimiento 0 y valor fijo, cuando al input le asig cremiento de 1
+        toma todo el valor restanto, porque por cada 0 pixel que se le asigna al label le asigna 1 al input*/
+    label {
+        flex: 0 0 10rem; // 1er parametro es el factor de crecimiento - 2do parametro es el factor de decrecimiento - 3er parametro es el tamaño fijo
+        color: $blanco;
+    } 
+    input {
+        flex: 1; // aca el valor de crecimiento es 1
+        padding: $separacion / 4;
+        border-radius: 1rem;
+        border: none;
+    }
+}
+
+.alerta {
+    padding: $separacion / 2;
+    text-align: center;
+    color: $blanco;
+    width: 100%;
+    display: block;
+
+    &.error {
+        background-color: rgb(194,0,0);
+    }
+}
